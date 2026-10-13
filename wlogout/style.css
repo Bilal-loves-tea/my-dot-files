@@ -1,0 +1,50 @@
+@define-color base     #1e1e2e;
+@define-color mantle   #181825;
+@define-color crust    #11111b;
+@define-color text     #cdd6f4;
+@define-color surface0 #313244;
+@define-color mauve    #cba6f7;
+@define-color teal     #94e2d5;
+
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+window {
+    background-color: alpha(@crust, 0.85);
+}
+
+button {
+    color: @text;
+    background-color: @base;
+    border: 2px solid @surface0;
+    border-radius: 0;
+    margin: 6px;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 28%;
+    text-decoration-color: transparent;
+    padding-top: 110px;
+    transition: all 0.15s ease-in-out;
+}
+
+button:hover,
+button:focus {
+    background-color: @mantle;
+    border-color: @mauve;
+    color: @mauve;
+    outline-style: none;
+}
+
+button:active {
+    border-color: @teal;
+    color: @teal;
+}
+
+#lock     { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout   { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#suspend  { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#reboot   { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }

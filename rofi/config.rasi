@@ -1,0 +1,129 @@
+/**
+ * Catppuccin Mocha — rofi config
+ * Simple drun launcher, styled for Hyprland
+ *
+ * Usage: rofi -show drun -config ~/.config/rofi/config.rasi
+ */
+
+configuration {
+    modi:                       "drun,run,window";
+    show-icons:                 true;
+    icon-theme:                 "Catppuccin-Dark";
+    display-drun:               " Apps";
+    display-run:                " Run";
+    display-window:             " Window";
+    drun-display-format:        "{name}";
+    font:                       "JetBrainsMono Nerd Font 11";
+    hover-select:               true;
+    me-select-entry:            "MousePrimary";
+    me-accept-entry:            "MouseDPrimary";
+}
+
+* {
+    /* Catppuccin Mocha palette */
+    base:     #1e1e2eff;
+    mantle:   #181825ff;
+    crust:    #11111bff;
+
+    text:     #cdd6f4ff;
+    subtext0: #a6adc8ff;
+    overlay0: #6c7086ff;
+
+    surface0: #313244ff;
+    surface1: #45475aff;
+    surface2: #585b70ff;
+
+    mauve:    #cba6f7ff;
+    blue:     #89b4faff;
+    lavender: #b4befeff;
+    red:      #f38ba8ff;
+    green:    #a6e3a1ff;
+
+    background-color:   transparent;
+    text-color:          @text;
+
+    margin:  0px;
+    padding: 0px;
+    spacing: 0px;
+}
+
+window {
+    location:    center;
+    width:       600px;
+    background-color: @base;
+    border:      2px;
+    border-color: @mauve;
+    border-radius: 16px;
+    padding:     8px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  12px;
+    padding:  8px;
+}
+
+inputbar {
+    background-color: @mantle;
+    border-radius:     12px;
+    padding:            10px 14px;
+    spacing:            10px;
+    children:           [ prompt, entry ];
+}
+
+prompt {
+    text-color: @mauve;
+    font:       "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    placeholder:       "Search…";
+    placeholder-color: @overlay0;
+    text-color:        @text;
+}
+
+listview {
+    columns:    1;
+    lines:      8;
+    spacing:    4px;
+    fixed-height: false;
+    scrollbar:  false;
+}
+
+element {
+    padding:       8px 12px;
+    border-radius: 10px;
+    spacing:       10px;
+}
+
+element normal.normal {
+    text-color:       @text;
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @surface0;
+    text-color:        @lavender;
+    border:             0px 0px 0px 3px;
+    border-color:       @mauve;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color:        @text;
+}
+
+element-icon {
+    size:          22px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color:     inherit;
+}
+
+scrollbar {
+    handle-color: @surface1;
+    handle-width: 4px;
+}
