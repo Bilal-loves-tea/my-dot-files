@@ -30,4 +30,5 @@ sudo systemctl enable --now NetworkManager bluetooth
 systemctl --user enable --now mpd
 ```
 
---- Double check the hyprland.conf file if the display isn't proper
+--- Double check the hyprland.conf file if the display isn't proper ---
+--- Oh and also the ly/ will go to /etc/usr/ NOT to .conf ---
